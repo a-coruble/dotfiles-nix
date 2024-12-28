@@ -11,23 +11,20 @@
 
   outputs = inputs @ { self, nix-darwin, nixpkgs, home-manager }:
     let
-      vars = {
-        user = "arthurcoruble";
-      };
+      pkgs = import nixpkgs { system = "aarch64-darwin"; config.allowUnfree = true; };
     in
     {
       darwinConfigurations."MacbookProM1" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        specialArgs = { inherit inputs nixpkgs nix-darwin home-manager vars; };
+        specialArgs = { inherit self inputs pkgs nixpkgs nix-darwin home-manager; };
         modules = [
           ./nix-darwin
           home-manager.darwinModules.home-manager
           {
-            nixpkgs.config.allowUnfree = true;
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.verbose = true;
-            home-manager.users.${vars.user} = import ./home-manager;
+            home-manager.users.arthurcoruble = import ./home-manager;
           }
         ];
       };

@@ -1,9 +1,9 @@
-args @ { inputs, nixpkgs, home-manager, vars, ... }:
+{ self, inputs, pkgs, nixpkgs, nix-darwin, home-manager, ... }:
 
 {
   home.stateVersion = "24.11";
-  home.username = "${vars.user}";
-  home.homeDirectory = "/Users/${vars.user}";
+  home.username = "arthurcoruble";
+  home.homeDirectory = "/Users/arthurcoruble";
   home.packages = [
     pkgs.arc-browser
     pkgs.bat
@@ -77,7 +77,7 @@ args @ { inputs, nixpkgs, home-manager, vars, ... }:
     enable = true;
     enableZshIntegration = true;
     settings = {
-      format = lib.concatStrings [
+      format = pkgs.lib.concatStrings [
         "$username"
         "$hostname"
         "$localip"

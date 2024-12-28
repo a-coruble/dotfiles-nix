@@ -1,4 +1,4 @@
-args @ { inputs, nixpkgs, home-manager, vars, ... }:
+{ self, inputs, pkgs, nixpkgs, nix-darwin, home-manager, ... }:
 
 {
   services.nix-daemon.enable = true;
@@ -44,8 +44,8 @@ args @ { inputs, nixpkgs, home-manager, vars, ... }:
 
   security.pam.enableSudoTouchIdAuth = true;
 
-  users.users.arthurcoruble.home = "/Users/${vars.user}";
-  users.users.arthurcoruble.name = "${vars.user}";
+  users.users.arthurcoruble.home = "/Users/arthurcoruble";
+  users.users.arthurcoruble.name = "arthurcoruble";
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
