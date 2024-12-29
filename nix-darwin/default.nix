@@ -45,6 +45,7 @@
     enable = true;
     casks = [
       "ableton-live-lite"
+      "ghostty"
       "notion"
       "shottr"
     ];
