@@ -12,6 +12,7 @@
     pkgs.fzf
     pkgs.gitui
     pkgs.nixpkgs-fmt
+    pkgs.podman-desktop
     pkgs.raycast
     pkgs.slack
     pkgs.starship

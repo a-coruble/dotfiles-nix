@@ -43,11 +43,15 @@
 
   homebrew = {
     enable = true;
+    onActivation = {
+      cleanup = "zap";
+    };
     casks = [
       "ableton-live-lite"
       "figma"
       "ghostty"
       "notion"
+      "orbstack"
       "shottr"
     ];
   };
