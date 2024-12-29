@@ -45,8 +45,10 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
-      switch = "darwin-rebuild switch --flake ~/.config/dotfiles-nix";
+      switch = "darwin-rebuild switch --flake ~/.config/dotfiles-nix#MacbookProM1";
       gu = "gitui";
       l = "eza --all --git --long --icons=always";
       tree = "eza --all --git --long --icons=always --tree";

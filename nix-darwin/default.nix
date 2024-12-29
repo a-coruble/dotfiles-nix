@@ -9,6 +9,10 @@
   nix.linux-builder.enable = true;
 
   system.defaults = {
+    controlcenter.BatteryShowPercentage = true;
+    screensaver.askForPassword = true;
+    screensaver.askForPasswordDelay = 0;
+    menuExtraClock.Show24Hour = true;
     dock = {
       autohide = true;
       mru-spaces = false;
@@ -20,7 +24,11 @@
       ShowPathbar = true;
     };
     trackpad = {
+      # tap to click
       Clicking = true;
+      # tap-tap-drag to drag
+      Dragging = true;
+      # two-finger-tap right click
       TrackpadRightClick = true;
     };
   };
