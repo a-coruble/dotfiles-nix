@@ -48,11 +48,12 @@
     casks = [
       "ableton-live-lite"
       "figma"
+      "focusrite-control-2"
       "ghostty"
       "notion"
       "orbstack"
+      "raycast"
       "shottr"
-      "focusrite-control-2"
     ];
   };
 
