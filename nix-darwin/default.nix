@@ -38,7 +38,6 @@
   environment.systemPackages =
     [
       pkgs.vim
-      pkgs.iterm2
     ];
 
   homebrew = {
@@ -53,6 +52,7 @@
       "notion"
       "orbstack"
       "shottr"
+      "focusrite-control-2"
     ];
   };
 
