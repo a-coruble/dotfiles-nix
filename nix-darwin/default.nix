@@ -7,6 +7,11 @@
     extra-platforms = x86_64-darwin aarch64-darwin
   '';
   nix.linux-builder.enable = true;
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 2w";
+  };
+  nix.optimise.automatic = true;
 
   system.defaults = {
     controlcenter.BatteryShowPercentage = true;
@@ -45,15 +50,23 @@
     onActivation = {
       cleanup = "zap";
     };
+    brews = [
+      "cmake"
+      "ninja"
+      "dfu-util"
+    ];
     casks = [
       "ableton-live-lite"
+      "cursor"
       "figma"
       "focusrite-control-2"
       "ghostty"
       "notion"
       "orbstack"
+      "protonvpn"
       "raycast"
       "shottr"
+      "tidal"
     ];
   };
 
