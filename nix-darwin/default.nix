@@ -57,6 +57,7 @@
     ];
     casks = [
       "ableton-live-lite"
+      "arduino-ide"
       "cursor"
       "figma"
       "focusrite-control-2"
